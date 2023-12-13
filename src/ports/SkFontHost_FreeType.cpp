@@ -2041,6 +2041,20 @@ bool SkTypeface_FreeType::Scanner::recognizedFont(SkStreamAsset* stream, int* nu
     return true;
 }
 
+bool SkTypeface_FreeType::Scanner::recognizedFont(SkStreamAsset* stream, int* numFaces, int* numVariation) const {
+    SkAutoMutexExclusive libraryLock(fLibraryMutex);
+
+    FT_StreamRec streamRec;
+    SkUniqueFTFace face(this->openFace(stream, -1, &streamRec));
+    if (!face) {
+        return false;
+    }
+
+    *numFaces = face->num_faces;
+    *numVariation = (face->style_flags >> 16);
+     return true;
+}
+
 bool SkTypeface_FreeType::Scanner::scanFont(
     SkStreamAsset* stream, int ttcIndex,
     SkString* name, SkFontStyle* style, bool* isFixedPitch, AxisDefinitions* axes) const

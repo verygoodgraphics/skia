@@ -96,6 +96,7 @@ public:
         };
         using AxisDefinitions = skia_private::STArray<4, AxisDefinition, true>;
         bool recognizedFont(SkStreamAsset* stream, int* numFonts) const;
+        bool recognizedFont(SkStreamAsset* stream, int* numFonts, int* numVariations) const;
         bool scanFont(SkStreamAsset* stream, int ttcIndex,
                       SkString* name, SkFontStyle* style, bool* isFixedPitch,
                       AxisDefinitions* axes) const;
