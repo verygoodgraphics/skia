@@ -3086,21 +3086,11 @@ if (skia_enable_tools) {
     }
   }
 
-  if (is_android && defined(ndk) && ndk != "") {
-    copy("gdbserver") {
-      sources = [ "$ndk/$ndk_gdbserver" ]
-      outputs = [ "$root_out_dir/gdbserver" ]
+  if (is_linux || is_win || is_mac) {
+    test_app("editor") {
+      is_shared_library = is_android
+      deps = [ "modules/skplaintexteditor:editor_app" ]
     }
-  }
-
-  test_app("editor") {
-    is_shared_library = is_android
-    deps = [ "modules/skplaintexteditor:editor_app" ]
-  }
-
-  test_app("text_editor") {
-    is_shared_library = is_android
-    deps = [ "experimental/sktext:text_editor" ]
   }
 
   skia_executable("image_diff_metric") {
