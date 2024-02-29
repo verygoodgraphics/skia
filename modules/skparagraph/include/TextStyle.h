@@ -2,6 +2,8 @@
 #ifndef TextStyle_DEFINED
 #define TextStyle_DEFINED
 
+#include "paragraph_dll.h"
+
 #include <optional>
 #include <vector>
 #include "include/core/SkColor.h"
@@ -67,7 +69,7 @@ enum StyleType {
     kWordSpacing
 };
 
-struct Decoration {
+struct SKPARAGRAPH_API Decoration {
     TextDecoration fType;
     TextDecorationMode fMode;
     SkColor fColor;
@@ -121,7 +123,7 @@ struct FontFeature {
     int fValue;
 };
 
-struct PlaceholderStyle {
+struct SKPARAGRAPH_API PlaceholderStyle {
     PlaceholderStyle() = default;
     PlaceholderStyle(SkScalar width, SkScalar height, PlaceholderAlignment alignment,
                      TextBaseline baseline, SkScalar offset)
@@ -148,7 +150,7 @@ struct PlaceholderStyle {
     SkScalar fBaselineOffset = 0;
 };
 
-class TextStyle {
+class SKPARAGRAPH_API TextStyle {
 public:
     TextStyle() = default;
     TextStyle(const TextStyle& other) = default;
@@ -287,7 +289,7 @@ public:
     void setPlaceholder() { fIsPlaceholder = true; }
 
 private:
-    static const std::vector<SkString>* kDefaultFontFamilies;
+    //static const std::vector<SkString>* kDefaultFontFamilies;
 
     Decoration fDecoration = {
             TextDecoration::kNoDecoration,
@@ -301,7 +303,7 @@ private:
 
     SkFontStyle fFontStyle;
 
-    std::vector<SkString> fFontFamilies = *kDefaultFontFamilies;
+    std::vector<SkString> fFontFamilies = std::vector<SkString>{SkString(DEFAULT_FONT_FAMILY)};
 
     SkScalar fFontSize = 14.0;
     SkScalar fHeight = 1.0;
@@ -336,7 +338,7 @@ typedef size_t TextIndex;
 typedef SkRange<size_t> TextRange;
 const SkRange<size_t> EMPTY_TEXT = EMPTY_RANGE;
 
-struct Block {
+struct SKPARAGRAPH_API Block {
     Block() = default;
     Block(size_t start, size_t end, const TextStyle& style) : fRange(start, end), fStyle(style) {}
     Block(TextRange textRange, const TextStyle& style) : fRange(textRange), fStyle(style) {}
@@ -356,7 +358,7 @@ typedef SkRange<size_t> BlockRange;
 const size_t EMPTY_BLOCK = EMPTY_INDEX;
 const SkRange<size_t> EMPTY_BLOCKS = EMPTY_RANGE;
 
-struct Placeholder {
+struct SKPARAGRAPH_API Placeholder {
     Placeholder() = default;
     Placeholder(size_t start, size_t end, const PlaceholderStyle& style, const TextStyle& textStyle,
                 BlockRange blocksBefore, TextRange textBefore)

@@ -79,12 +79,12 @@ private:
     using INHERITED = SkScalerContext;
 };
 
-class SkTypeface_FreeType : public SkTypeface {
+class SK_API SkTypeface_FreeType : public SkTypeface {
 public:
     /** For SkFontMgrs to make use of our ability to extract
      *  name and style from a stream, using FreeType's API.
      */
-    class Scanner : ::SkNoncopyable {
+    class SK_API Scanner : ::SkNoncopyable {
     public:
         Scanner();
         ~Scanner();
@@ -170,7 +170,7 @@ private:
     using INHERITED = SkTypeface;
 };
 
-class SkTypeface_FreeTypeStream : public SkTypeface_FreeType {
+class SK_API SkTypeface_FreeTypeStream : public SkTypeface_FreeType {
 public:
     SkTypeface_FreeTypeStream(std::unique_ptr<SkFontData> fontData, const SkString familyName,
                               const SkFontStyle& style, bool isFixedPitch);

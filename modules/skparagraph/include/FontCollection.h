@@ -2,6 +2,8 @@
 #ifndef FontCollection_DEFINED
 #define FontCollection_DEFINED
 
+#include "paragraph_dll.h"
+
 #include <memory>
 #include <optional>
 #include <set>
@@ -17,7 +19,7 @@ namespace textlayout {
 
 class TextStyle;
 class Paragraph;
-class FontCollection : public SkRefCnt {
+class SKPARAGRAPH_API FontCollection : public SkRefCnt {
 public:
     FontCollection();
 

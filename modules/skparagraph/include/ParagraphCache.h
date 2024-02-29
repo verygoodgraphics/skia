@@ -2,6 +2,8 @@
 #ifndef ParagraphCache_DEFINED
 #define ParagraphCache_DEFINED
 
+#include "paragraph_dll.h"
+
 #include "include/private/base/SkMutex.h"
 #include "src/core/SkLRUCache.h"
 #include <functional>  // std::function
@@ -15,7 +17,7 @@ class ParagraphImpl;
 class ParagraphCacheKey;
 class ParagraphCacheValue;
 
-class ParagraphCache {
+class SKPARAGRAPH_API ParagraphCache {
 public:
     ParagraphCache();
     ~ParagraphCache();

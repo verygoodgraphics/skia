@@ -2,6 +2,8 @@
 #ifndef Paragraph_DEFINED
 #define Paragraph_DEFINED
 
+#include "paragraph_dll.h"
+
 #include "modules/skparagraph/include/FontCollection.h"
 #include "modules/skparagraph/include/Metrics.h"
 #include "modules/skparagraph/include/ParagraphStyle.h"
@@ -15,7 +17,7 @@ namespace textlayout {
 
 class ParagraphPainter;
 
-class Paragraph {
+class SKPARAGRAPH_API Paragraph {
 
 public:
     Paragraph(ParagraphStyle style, sk_sp<FontCollection> fonts);

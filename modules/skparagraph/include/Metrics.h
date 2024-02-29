@@ -2,12 +2,14 @@
 #ifndef Metrics_DEFINED
 #define Metrics_DEFINED
 
+#include "paragraph_dll.h"
+
 #include <map>
 #include "modules/skparagraph/include/TextStyle.h"
 
 namespace skia {
 namespace textlayout {
-class StyleMetrics {
+class SKPARAGRAPH_API StyleMetrics {
 public:
     StyleMetrics(const TextStyle* style) : text_style(style) {}
 
@@ -36,7 +38,7 @@ public:
     SkFontMetrics font_metrics;
 };
 
-class LineMetrics {
+class SKPARAGRAPH_API LineMetrics {
 public:
     LineMetrics() { }
 

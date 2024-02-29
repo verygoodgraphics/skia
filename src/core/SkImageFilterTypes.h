@@ -909,7 +909,7 @@ struct ContextInfo {
     SkImageFilterCache* fCache;
 };
 
-class Context {
+class SK_API Context {
     static constexpr GrSurfaceOrigin kUnusedOrigin = (GrSurfaceOrigin) 0;
 public:
     static Context MakeRaster(const ContextInfo& info) {
