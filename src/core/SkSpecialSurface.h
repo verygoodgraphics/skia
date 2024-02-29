@@ -38,7 +38,7 @@ class SkSpecialImage;
  *     - it becomes inactive once a snapshot of it is taken (i.e., no copy-on-write)
  *     - it has no generation ID
  */
-class SkSpecialSurface : public SkRefCnt {
+class SK_API SkSpecialSurface : public SkRefCnt {
 public:
     SkSpecialSurface(sk_sp<SkBaseDevice>, const SkIRect& subset);
 

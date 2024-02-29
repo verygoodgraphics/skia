@@ -2,6 +2,8 @@
 #ifndef TypefaceFontProvider_DEFINED
 #define TypefaceFontProvider_DEFINED
 
+#include "paragraph_dll.h"
+
 #include "include/private/base/SkTArray.h"
 #include "src/core/SkTHash.h"
 #include <string>
@@ -14,7 +16,7 @@
 namespace skia {
 namespace textlayout {
 
-class TypefaceFontStyleSet : public SkFontStyleSet {
+class SKPARAGRAPH_API TypefaceFontStyleSet : public SkFontStyleSet {
 public:
     explicit TypefaceFontStyleSet(const SkString& familyName);
 
@@ -33,7 +35,7 @@ private:
     SkString fAlias;
 };
 
-class TypefaceFontProvider : public SkFontMgr {
+class SKPARAGRAPH_API TypefaceFontProvider : public SkFontMgr {
 public:
     size_t registerTypeface(sk_sp<SkTypeface> typeface);
     size_t registerTypeface(sk_sp<SkTypeface> typeface, const SkString& alias);

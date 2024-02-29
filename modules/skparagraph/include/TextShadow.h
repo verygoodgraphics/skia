@@ -2,13 +2,15 @@
 #ifndef TextShadow_DEFINED
 #define TextShadow_DEFINED
 
+#include "paragraph_dll.h"
+
 #include "include/core/SkColor.h"
 #include "include/core/SkPoint.h"
 
 namespace skia {
 namespace textlayout {
 
-class TextShadow {
+class SKPARAGRAPH_API TextShadow {
 public:
     SkColor fColor = SK_ColorBLACK;
     SkPoint fOffset;

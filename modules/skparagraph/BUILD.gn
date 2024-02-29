@@ -16,6 +16,9 @@ if (skia_enable_skparagraph && skia_enable_skshaper && skia_enable_skunicode &&
     skia_use_harfbuzz) {
   config("public_config") {
     defines = [ "SK_ENABLE_PARAGRAPH" ]
+    if (is_component_build) {
+      defines += [ "SKPARAGRAPH_DLL" ]
+    }
     include_dirs = [
       "include",
       "utils",
@@ -32,6 +35,7 @@ if (skia_enable_skparagraph && skia_enable_skshaper && skia_enable_skunicode &&
       "../skshaper",
       "../skunicode",
     ]
+    defines = [ "SKPARAGRAPH_IMPLEMENTATION=1" ]
   }
 
   config("utils_config") {
