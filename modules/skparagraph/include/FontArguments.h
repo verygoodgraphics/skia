@@ -2,6 +2,8 @@
 #ifndef FontArguments_DEFINED
 #define FontArguments_DEFINED
 
+#include "paragraph_dll.h"
+
 #include <functional>
 #include <vector>
 #include "include/core/SkFontArguments.h"
@@ -10,7 +12,7 @@
 namespace skia {
 namespace textlayout {
 
-class FontArguments {
+class SKPARAGRAPH_API FontArguments {
 public:
     FontArguments(const SkFontArguments&);
     FontArguments(const FontArguments&) = default;

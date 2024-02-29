@@ -6,8 +6,8 @@
 namespace skia {
 namespace textlayout {
 
-const std::vector<SkString>* TextStyle::kDefaultFontFamilies =
-        new std::vector<SkString>{SkString(DEFAULT_FONT_FAMILY)};
+// SKPARAGRAPH_API const std::vector<SkString>* TextStyle::kDefaultFontFamilies =
+//         new std::vector<SkString>{SkString(DEFAULT_FONT_FAMILY)};
 
 TextStyle TextStyle::cloneForPlaceholder() {
     TextStyle result;

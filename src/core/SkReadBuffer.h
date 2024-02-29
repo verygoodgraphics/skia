@@ -53,7 +53,7 @@ struct SkPoint3;
 #include "include/core/SkDrawLooper.h"
 #endif
 
-class SkReadBuffer {
+class SK_API SkReadBuffer {
 public:
     SkReadBuffer() = default;
     SkReadBuffer(const void* data, size_t size) {

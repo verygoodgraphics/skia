@@ -23,7 +23,7 @@ class GrRecordingContext;
 
 // True base class that all SkImageFilter implementations need to extend from. This provides the
 // actual API surface that Skia will use to compute the filtered images.
-class SkImageFilter_Base : public SkImageFilter {
+class SK_API SkImageFilter_Base : public SkImageFilter {
 public:
     // DEPRECATED - Use skif::Context directly.
     using Context = skif::Context;
@@ -168,7 +168,7 @@ protected:
         uint32_t fFlags;
     };
 
-    class Common {
+    class SK_API Common {
     public:
         /**
          *  Attempt to unflatten the cropRect and the expected number of input filters.

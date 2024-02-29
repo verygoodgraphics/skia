@@ -3,6 +3,8 @@
 #ifndef DartTypes_DEFINED
 #define DartTypes_DEFINED
 
+#include "paragraph_dll.h"
+
 #include "include/core/SkRect.h"
 #include "include/core/SkTypes.h"
 
@@ -63,7 +65,7 @@ enum class TextDirection {
     kLtr,
 };
 
-struct PositionWithAffinity {
+struct SKPARAGRAPH_API PositionWithAffinity {
     int32_t position;
     Affinity affinity;
 
@@ -71,7 +73,7 @@ struct PositionWithAffinity {
     PositionWithAffinity(int32_t p, Affinity a) : position(p), affinity(a) {}
 };
 
-struct TextBox {
+struct SKPARAGRAPH_API TextBox {
     SkRect rect;
     TextDirection direction;
 

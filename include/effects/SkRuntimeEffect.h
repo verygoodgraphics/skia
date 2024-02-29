@@ -66,7 +66,7 @@ class Program;
 class SK_API SkRuntimeEffect : public SkRefCnt {
 public:
     // Reflected description of a uniform variable in the effect's SkSL
-    struct Uniform {
+    struct SK_API Uniform {
         enum class Type {
             kFloat,
             kFloat2,
@@ -127,7 +127,7 @@ public:
         int              index;
     };
 
-    class Options {
+    class SK_API Options {
     public:
         // For testing purposes, disables optimization and inlining. (Normally, Runtime Effects
         // don't run the inliner directly, but they still get an inlining pass once they are
@@ -187,7 +187,7 @@ public:
     }
 
     // Object that allows passing a SkShader, SkColorFilter or SkBlender as a child
-    class ChildPtr {
+    class SK_API ChildPtr {
     public:
         ChildPtr() = default;
         ChildPtr(sk_sp<SkShader> s) : fChild(std::move(s)) {}
@@ -347,9 +347,9 @@ private:
 };
 
 /** Base class for SkRuntimeShaderBuilder, defined below. */
-class SkRuntimeEffectBuilder {
+class SK_API SkRuntimeEffectBuilder {
 public:
-    struct BuilderUniform {
+    struct SK_API BuilderUniform {
         // Copy 'val' to this variable. No type conversion is performed - 'val' must be same
         // size as expected by the effect. Information about the variable can be queried by
         // looking at fVar. If the size is incorrect, no copy will be performed, and debug
@@ -404,7 +404,7 @@ public:
         const SkRuntimeEffect::Uniform* fVar;    // nullptr if the variable was not found
     };
 
-    struct BuilderChild {
+    struct SK_API BuilderChild {
         template <typename T> BuilderChild& operator=(sk_sp<T> val) {
             if (!fChild) {
                 SkDEBUGFAIL("Assigning to missing child");

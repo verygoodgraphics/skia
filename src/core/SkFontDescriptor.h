@@ -76,7 +76,7 @@ private:
     skia_private::AutoSTMalloc<4, SkFontArguments::Palette::Override> fPaletteOverrides;
 };
 
-class SkFontDescriptor : SkNoncopyable {
+class SK_API SkFontDescriptor : SkNoncopyable {
 public:
     SkFontDescriptor();
     // Does not affect ownership of SkStream.

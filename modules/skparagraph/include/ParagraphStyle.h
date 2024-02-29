@@ -2,6 +2,8 @@
 #ifndef ParagraphStyle_DEFINED
 #define ParagraphStyle_DEFINED
 
+#include "paragraph_dll.h"
+
 #include "include/core/SkFontStyle.h"
 #include "include/core/SkScalar.h"
 #include "include/core/SkString.h"
@@ -18,7 +20,7 @@
 namespace skia {
 namespace textlayout {
 
-struct StrutStyle {
+struct SKPARAGRAPH_API StrutStyle {
     StrutStyle();
 
     const std::vector<SkString>& getFontFamilies() const { return fFontFamilies; }
@@ -75,7 +77,7 @@ private:
     bool fHalfLeading;
 };
 
-struct ParagraphStyle {
+struct SKPARAGRAPH_API ParagraphStyle {
     ParagraphStyle();
 
     bool operator==(const ParagraphStyle& rhs) const {

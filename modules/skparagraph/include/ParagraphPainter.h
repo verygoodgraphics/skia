@@ -2,6 +2,8 @@
 #ifndef ParagraphPainter_DEFINED
 #define ParagraphPainter_DEFINED
 
+#include "paragraph_dll.h"
+
 #include "include/core/SkPaint.h"
 #include "include/core/SkTextBlob.h"
 
@@ -11,7 +13,7 @@
 namespace skia {
 namespace textlayout {
 
-class ParagraphPainter {
+class SKPARAGRAPH_API ParagraphPainter {
 public:
     typedef int PaintID;
     typedef std::variant<SkPaint, PaintID> SkPaintOrID;

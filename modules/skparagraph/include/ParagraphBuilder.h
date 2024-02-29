@@ -2,6 +2,8 @@
 #ifndef ParagraphBuilder_DEFINED
 #define ParagraphBuilder_DEFINED
 
+#include "paragraph_dll.h"
+
 #include <memory>
 #include <stack>
 #include <string>
@@ -15,7 +17,7 @@
 namespace skia {
 namespace textlayout {
 
-class ParagraphBuilder {
+class SKPARAGRAPH_API ParagraphBuilder {
 public:
     ParagraphBuilder(const ParagraphStyle&, sk_sp<FontCollection>) { }
 
