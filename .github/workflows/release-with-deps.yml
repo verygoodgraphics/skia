@@ -42,10 +42,11 @@ jobs:
         echo "SHA256 Checksums:" >> RELEASE_BODY
         sha256sum github-release/* >> RELEASE_BODY
         echo >> RELEASE_BODY
-        echo "Commit-id-${{ github.sha }}" >> RELEASE_BODY
+        echo "Commit-id: ${{ github.sha }}" >> RELEASE_BODY
 
     - name: Publish
       uses: softprops/action-gh-release@v1
       with:
         files: github-release/skia-with-deps-${{ github.ref_name }}.tar.gz
         body_path: RELEASE_BODY
+        append_body: true
