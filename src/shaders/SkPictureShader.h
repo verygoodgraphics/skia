@@ -37,10 +37,10 @@ struct SkStageRec;
  * The SkPicture is first rendered into a tile, which is then used to shade the area according
  * to specified tiling rules.
  */
-class SkPictureShader : public SkShaderBase {
+class SK_API SkPictureShader : public SkShaderBase {
 public:
-    static sk_sp<SkShader> Make(sk_sp<SkPicture>, SkTileMode, SkTileMode, SkFilterMode,
-                                const SkMatrix*, const SkRect*);
+    static sk_sp<SkShader> Make(
+            sk_sp<SkPicture>, SkTileMode, SkTileMode, SkFilterMode, const SkMatrix*, const SkRect*);
 
 #if defined(SK_GRAPHITE)
     void addToKey(const skgpu::graphite::KeyContext&,
@@ -101,10 +101,10 @@ private:
                                  SkColorSpace* dstColorSpace,
                                  const SkSurfaceProps& props) const;
 
-    sk_sp<SkPicture>    fPicture;
-    SkRect              fTile;
-    SkTileMode          fTmx, fTmy;
+    sk_sp<SkPicture> fPicture;
+    SkRect fTile;
+    SkTileMode fTmx, fTmy;
     SkFilterMode fFilter;
 };
 
-#endif // SkPictureShader_DEFINED
+#endif  // SkPictureShader_DEFINED
