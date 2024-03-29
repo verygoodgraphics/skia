@@ -37,7 +37,7 @@ struct SkStageRec;
  * The SkPicture is first rendered into a tile, which is then used to shade the area according
  * to specified tiling rules.
  */
-class SkPictureShader : public SkShaderBase {
+class SK_API SkPictureShader : public SkShaderBase {
 public:
     static sk_sp<SkShader> Make(sk_sp<SkPicture>, SkTileMode, SkTileMode, SkFilterMode,
                                 const SkMatrix*, const SkRect*);
