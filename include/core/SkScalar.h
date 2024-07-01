@@ -154,8 +154,8 @@ static inline SkScalar SkScalarInterp(SkScalar A, SkScalar B, SkScalar t) {
     monotonically increasing). If key is the value of a repeated scalar in
     keys the first one will be used.
 */
-SkScalar SkScalarInterpFunc(SkScalar searchKey, const SkScalar keys[],
-                            const SkScalar values[], int length);
+SK_API SkScalar SkScalarInterpFunc(SkScalar searchKey, const SkScalar keys[],
+                                   const SkScalar values[], int length);
 
 /*
  *  Helper to compare an array of scalars.
